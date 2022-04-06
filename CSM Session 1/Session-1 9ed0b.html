@@ -1,0 +1,739 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Session-1</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5173def3-5a5f-4811-9beb-1fbb8c2f5e3f" class="page serif"><header><h1 class="page-title">Session-1</h1></header><div class="page-body"><p id="32b24afb-a26d-4b84-8a74-b7183871ff6a" class="">
+</p><nav id="a7da600e-f61d-4aa5-ae4e-a9c8ea112fc8" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0199ad1f-f765-45f4-8342-685657191fcd">Background, History &amp; Overview:</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#054b433a-8565-4307-b961-d737480fb3a9">Terms we are going to use</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#62bca0fe-ead5-412d-8b8e-c89c3b63a37d"><strong>Roles: </strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#3f40e7e5-e235-40c1-85e7-1055e53410b8">Product Shift</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#36f691c4-ccd9-4b61-a2e6-8ce3bf6a9f35">Value per sprint - Maximizing the value delivery</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#bf54cf2f-df42-42c2-894a-541c530c9906">Complexity - Understanding Complexity</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6d49274a-f648-45d5-abe5-430c2068564e">Iterative Development - Iterative vs Incremental</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#13fb0c00-ff23-4768-86ce-9f46e9611e2b">Sprint Planning</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#df113620-be5a-4a37-8dc8-6ff38440630c">Example: These are the steps GMo uses,</a></div></nav><p id="1a7bac46-b3cc-41cb-b93c-1772ecf1a503" class="">
+</p><h2 id="0199ad1f-f765-45f4-8342-685657191fcd" class="">Background, History &amp; Overview:</h2><ol type="1" id="291646cb-f99d-45c7-8c74-10155ccb8762" class="numbered-list" start="1"><li>Scrum started in Software, however now its everywhere (home, construction,...)</li></ol><ol type="1" id="8ea9ff51-523d-44e4-830a-f028918deaa9" class="numbered-list" start="2"><li>The examples will be relevant to Software Product development and projects.</li></ol><ol type="1" id="d5909ba9-dfec-4659-b22c-0f2c3a0cd452" class="numbered-list" start="3"><li>To forget anything that we have learned about Scrum to attend the class.</li></ol><p id="7bfc4cfd-bf98-4d16-8ad2-8792c04507d3" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="d9a64a86-ffb1-46a1-985f-430b45ac293e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">There is no one perfect way of Scrum that works for everyone</div></figure><p id="2d7ca94e-c69f-4ed8-bed0-4d52e5c279fa" class="">
+</p><p id="ef8c9214-d9b5-4e42-86ff-dc38e093da65" class="">Giora - Software Developer, Tester, and Project Manager. Used scrum to create a competitive advantage. Where the competition was giving them documentation, his organization was giving a working solution within the first few months of client interaction. Since 2005, Agile coach and trainer.</p><p id="b318f210-f052-4253-94a3-33f0ae9669ea" class="">
+</p><p id="4f45445d-5851-4f44-9809-409ace96213d" class="">Worked with Nike, Blizzard, Sony,... Certified Scrum Trainer since 2006. March of 2020 started doing virtually. Invited for his class for free whenever it happens closely. Currently located 25 miles south of Boston, MA. </p><p id="9e9c9d3e-0119-44f8-82dd-48e79d06cf5b" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="82301bac-0ca1-48e7-8839-db5298eab2df"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">CSM Certification will not get you a job. Its a foot in the door for the interview to show/prove your knowledge</div></figure><p id="d9366853-1a3c-4460-adbd-002d26a85110" class="">
+</p><h2 id="054b433a-8565-4307-b961-d737480fb3a9" class="">Terms we are going to use</h2><p id="97fe15f1-27de-4d9f-a7d9-e4f8ee6d2e60" class="">
+</p><p id="a55bec85-4b82-4c63-9576-c75d8f68861b" class=""><strong>Product backlog:</strong> PO manages the log based on priority. It&#x27;s a list of potential future investments. Just putting it there does not mean it will happen. It&#x27;s kind of like a wish list. If any of the investments become important, they are updated accordingly.</p><p id="ab95f9cb-b8c7-407e-9e68-13c2ad9ab454" class="">
+</p><p id="cbb89a6c-99be-454c-b0f3-89bea9ab5952" class="">Not everything in a product backlog is a user story. Not everything will provide a new capability for users.</p><p id="572e714d-4cfc-4083-9438-dbeea3320e1c" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="4afebf72-63d7-444b-b680-556c3f1481ec"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">The team should always have 1 and only 1 Product backlog</div></figure><p id="39a9b28e-2a1c-4516-8251-e32e8a267ef8" class="">
+</p><figure id="9ed0b9b8-b16a-4979-846f-38311fcee09a" class="image"><a href="Session-1%209ed0b/Screen_Shot_2022-04-02_at_1.03.34_PM.png"><img style="width:480px" src="Session-1%209ed0b/Screen_Shot_2022-04-02_at_1.03.34_PM.png"/></a></figure><p id="57db4c30-d1ce-4781-9d50-3c23497bac16" class="">
+</p><p id="6abed563-1166-4c22-b686-4c22aeb1d401" class="">It&#x27;s a living document. Something that is necessary is added and something that isn’t, removed. It will help increase visibility and transparency.</p><p id="b5807769-75a7-43ad-96bb-b52610afa496" class="">
+</p><p id="9a85f5ed-9607-473b-9c3e-898c55c86252" class=""> </p><blockquote id="ed15c6f8-7a93-4874-9665-870dc04086a6" class=""><em>Question - can Product backlog grow so long that it&#x27;s not achievable? how long can investments stay there without being worked on?</em> It&#x27;s up to the PO. Different POs work differently. Some set a limit - say 150 ideas, if it&#x27;s not in the top 150 ideas, it&#x27;s not that important. This will also help the stakeholders to not present a laundry list of ideas but instead present just a few to compete with the 150 list ranking. The downside being, PO needs to communicate well with the client that it did not make the top 150. Some POs set an expiration date for each investment.</blockquote><p id="9ccf0e60-b49f-4f60-aecb-431e79eef7c9" class="">
+</p><blockquote id="3b2b2c49-e1cf-4c39-be37-712a40a09860" class=""><em>Question - There are 280 in the backlog. Notetaking to CRs,... What should be the content of a backlog?</em><p id="3e1bc5fe-02ac-47b9-9406-be057c98ff43" class="">Not everything invested will have customer value. Sometimes it might help the company, or help increase the team’s efficiency or research and more. Having the list is easy to determine which investment and benefit. The backlog needs to be a list of nouns but not verbs.</p></blockquote><p id="62c1210d-0a8f-42f9-8c5f-a363086c2781" class="">
+</p><p id="fe8d0129-b69f-47c9-b6ce-4000085f8453" class=""><strong>Product Backlog Item (PBI):</strong> We are not worried about classifying the investments - CRs, Bugs, Tasks, Changes,... We only worry about the priority and the value they deliver. </p><p id="c757af34-4d84-42a0-829e-41cd047be3bf" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0a847e5c-237f-4d4e-8278-e41b330fd2d7"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Everything is a PBI, but not all PBIs are user stories. A user story is a type of PBI.</div></figure><p id="260bbca5-e81a-4dd2-9eca-53340487e4b7" class="">
+</p><p id="164f938b-529c-44d2-923b-46e0175968bb" class=""><strong>User Story:</strong> There will be no questions related to User Story. It&#x27;s not part of Scrum. It&#x27;s a tool to better collaborate and understand the needs of stakeholders and/or customers. A user story is something that provides value to users.</p><p id="acf7bdb6-7dae-4e1f-8732-c847d8dbbcb3" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="bb5976b5-489c-4155-ac17-2f0f375b1948"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">User story - It is context but not the Goal. It&#x27;s defining the problem, not the solution.</div></figure><p id="c9bec92c-ca81-4504-b75b-960557199f6e" class="">
+</p><p id="828da65b-c849-452a-8a67-828b7ba9ed7d" class=""><strong>Sprint:</strong> Every sprint starts with sprint planning. Sprints are typically less than a month. 2-3 weeks is a sweet spot. 4 weeks can be really long. 1 week sprints can be overly intensive. <strong>It&#x27;s a fixed time, variable scope (requirements) item</strong>. Each sprint delivers an increment.</p><ul id="cebb9d63-c869-4e2b-9ba7-87aa40ee8b8f" class="bulleted-list"><li style="list-style-type:disc">Sprint Planning - the 1st step of the sprint is to see which of the backlog items will be worked on in the sprint. Developers need to understand and come up with an implementation plan, which is a sprint backlog.</li></ul><ul id="ea0a35c6-4073-4089-9066-caea9a648285" class="bulleted-list"><li style="list-style-type:disc">Sprint Backlog - Developers craft an implementation plan to deliver the backlog items and maintain the plan for the lift of the Sprint. The items are chosen to accomplish the Sprint Goal.<ul id="36216119-30a1-4c86-9144-820448a6a493" class="bulleted-list"><li style="list-style-type:circle">Contains what to tackle </li></ul><ul id="a1a384c2-9a68-41c5-ac64-2ea676741300" class="bulleted-list"><li style="list-style-type:circle">how to tackle</li></ul><ul id="151fa541-43b6-40bf-8b76-4ca55bcd120c" class="bulleted-list"><li style="list-style-type:circle">developers maintain and update the backlog </li></ul></li></ul><ul id="69fe6f77-6f01-4369-b1ab-39f766ac744c" class="bulleted-list"><li style="list-style-type:disc">Sprint Goal - What the team is planning on achieving at the end of the sprint. The entire team needs to agree. PO does not come the next day and change it. It stays consistent for the next 2 weeks. End of Sprint Planning, the sprint goal is decided by the entire team (PO, developers,...).</li></ul><ul id="883442d1-0aad-437e-8281-dab4d9bf2771" class="bulleted-list"><li style="list-style-type:disc">Sprint Review - </li></ul><ul id="f598ffb5-26a4-4925-bcb9-44d4152ee0d5" class="bulleted-list"><li style="list-style-type:disc">Sprint Retrospect - </li></ul><p id="45c7d53b-d92b-4024-8084-a1a0a7eb3785" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="97e6fb74-d80d-46f2-b24d-ec35dc3e9bd7"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">POs own Product Backlog. Developers own the Sprint Backlog.</div></figure><p id="2edd648c-4ad3-40b0-bdde-6cc6e671358c" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="a10f4d23-c47c-43ce-b7f5-ebdb8810b5b0"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">POs and Developers together work on and confirm the Sprint Backlog.</div></figure><p id="40767cf8-de55-4f96-ac4c-4a9be9e14bb6" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8010db31-c9d0-40fc-9f5d-d9c669c7a87a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">At the end of the sprint, an item will be added to the increment or back to the product backlog, there are no other states.</div></figure><p id="14cb7d3b-362c-459c-95e4-e7c0e2e80d8d" class="">
+</p><blockquote id="5e779aae-06f4-4a43-a743-2200c107a750" class=""><em>Question - When to release?</em> If it&#x27;s done before the sprint review, it can be released right away. It does not have to coincide with the start and end of sprints.</blockquote><p id="43f67ba6-6afe-455d-8b81-0a0a4e8b0421" class="">
+</p><p id="da12a455-a2d9-4866-8eed-f4203922e173" class=""><strong>Increment</strong> - It&#x27;s the latest version of everything we have. It&#x27;s adding air to the balloon. It&#x27;s everything we have completed in this sprint and all the sprints prior. Represents all the things that are complete. It needs to be <em><strong>done and usable</strong></em> to be part of the increment.</p><ul id="7a217593-1c22-4055-9323-d8fc3526fc87" class="bulleted-list"><li style="list-style-type:disc">Done - There is no standard definition of done. It&#x27;s unique to different teams. It&#x27;s extending the org standards. A starting point would be the org standard. Ex: It needs to be scanned to be called done, however, different teams might add more to it accordingly for that team to mark it as done.</li></ul><ul id="d46b241b-02f3-4b28-8a22-dd675c8befb2" class="bulleted-list"><li style="list-style-type:disc">Usable - The user could use it.</li></ul><ul id="88698dac-84d6-4ee8-ad37-b1b6012a3d07" class="bulleted-list"><li style="list-style-type:disc">Useful - The user would use it.</li></ul><p id="f67a60a2-c6be-4785-8565-d41b1e35d0df" class="">
+</p><blockquote id="d8be1889-4ada-4973-9302-f428dc5b6c14" class=""><em>Question - How frequently can you change the sprint duration?</em> Having consistency will give cadence to the team.</blockquote><p id="50affb96-1de0-4180-ad93-85356cff3c1b" class="">
+</p><blockquote id="1bee5a29-3bc8-41ff-abe9-fc00f35dbd80" class=""><em>Question - What if the team is working on different projects?</em> There are no “projects” in Scrum. There are items in the Product backlog that can come from different projects which the PO needs to prioritize.</blockquote><p id="6faeddee-156e-4a81-9c3c-fdb1d04aebff" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="fd463fb4-d34c-48d0-86e6-07ef0ee9be51"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Product Backlog &gt; Sprint Backlog &gt; Increment</div></figure><p id="0cd12340-1cee-4530-b306-0234ca0ac0b8" class="">
+</p><figure id="30f94495-9f17-4bf7-bb1c-7387cabffeb6" class="image"><a href="Session-1%209ed0b/Screen_Shot_2022-04-02_at_2.12.11_PM.png"><img style="width:336px" src="Session-1%209ed0b/Screen_Shot_2022-04-02_at_2.12.11_PM.png"/></a></figure><p id="2fd769d2-2d9c-4684-b7d4-d4ccd6ce6308" class="">
+</p><h2 id="62bca0fe-ead5-412d-8b8e-c89c3b63a37d" class=""><strong>Roles: </strong></h2><ul id="c1002349-dd64-4248-911c-accb347f3316" class="bulleted-list"><li style="list-style-type:disc"><strong>Product Owner</strong> - Always suggested having a goal in mind. Held accountable for investment decisions. They define,<ul id="05bee68c-3b9d-445d-a704-e80cd1b23b17" class="bulleted-list"><li style="list-style-type:circle">What are the acceptance criteria</li></ul><ul id="759fdc07-9619-4aa5-90fb-69c97c2c9d28" class="bulleted-list"><li style="list-style-type:circle">What is important</li></ul><ul id="e217e674-1b47-438d-b0b6-a2785540dbf4" class="bulleted-list"><li style="list-style-type:circle">Why are we addressing these needs over other</li></ul><ul id="36009871-0164-4c46-9c2a-7ceb14ba2bbe" class="bulleted-list"><li style="list-style-type:circle">When are we going to work on other priorities</li></ul><ul id="98c89852-d940-4398-b92a-8e4a617eba2b" class="bulleted-list"><li style="list-style-type:circle">Anything related to - What, Why, and respective When</li></ul></li></ul><ul id="4b83f67a-cd7a-4684-a3be-5fa9517e60ff" class="bulleted-list"><li style="list-style-type:disc"><strong>Developers</strong> - Responsible for<ul id="c82217c4-8a72-4fd4-adcf-f79aa0db1d8d" class="bulleted-list"><li style="list-style-type:circle">Who is going to work on it?</li></ul><ul id="076c425c-2393-43bf-88ac-e27fe1d75e96" class="bulleted-list"><li style="list-style-type:circle">How long would it take?</li></ul><ul id="ca3ec6be-15c6-4b60-b24f-337991a56354" class="bulleted-list"><li style="list-style-type:circle">How much work can we take in this sprint?</li></ul><ul id="3a2f0eb4-4f5b-41fa-83e1-7fd49219896d" class="bulleted-list"><li style="list-style-type:circle">When are we going to deliver?</li></ul><ul id="ff558a11-2bac-4212-8690-ac6f0df07cd2" class="bulleted-list"><li style="list-style-type:circle">Anything related to - Who, How, How much, and respective When</li></ul></li></ul><ul id="e9dbb16d-7696-4d1d-a8f9-3e318728b724" class="bulleted-list"><li style="list-style-type:disc"><strong>Scrum Master</strong> - The role is to enable POs and Developers to work on their actions effectively. To facilitate what happens if it does not go as planned. Support and Coach POs and developers to be successful. CSM is a leadership, people-centric role. Pushing the team to make it better. Understand what the product is being used for, who the competitors are, which stakeholder priorities make sense,... CSMs work for their teams. Facilitating idea generation, and root cause analysis.</li></ul><p id="5009cf56-73fb-4b77-902e-3fe44578dfd5" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="c9232c83-1991-4d51-92f2-dc56e7643ab7"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">There are no BAs, QAs,... It&#x27;s just Product Owners, Developers, and Scrum Masters.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="6a214740-4254-4429-855c-0d5509169d1d"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">POs → Prioritize Customers. CSMs → Prioritize Teams.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="c39b03e8-fca7-4517-b128-228140612616"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Less conflict with DEVELOPER/CSM VS CSM/PO. If push comes to shove, developers can act as CSMs (dual role), but CMSs should not be both CSM/PO. </div></figure><p id="57a46509-4e34-4d84-b07d-9aeacdbe3e33" class="">
+</p><p id="d28dc62e-40f7-45e4-a995-b7cf3a4d4c0e" class=""><mark class="highlight-yellow_background">Product - 12-year-old kid’s toy</mark></p><p id="5f5d3a5a-ed3c-44b8-8f14-286b79dc4fa9" class=""><mark class="highlight-yellow_background">User - Child (is it fun to play?)</mark></p><p id="a34bbe32-6f71-40f5-9e37-6698a766a21a" class=""><mark class="highlight-yellow_background">Customer - Parent (is it safe + fun?)</mark></p><h2 id="3f40e7e5-e235-40c1-85e7-1055e53410b8" class="">Product Shift</h2><p id="af1630db-ac2b-4413-9ff4-3598ce47a6da" class="">How do we rate projects? If it&#x27;s delivered on time.</p><p id="f20870d1-ae3a-44eb-bedc-a161231906e8" class="">How do we rate products? If it provides value to the customers.</p><p id="f4f783fd-9dbf-4ae5-b738-f2d74576888d" class="">
+</p><p id="2bd975ac-2e8e-46fa-9a68-ff75c81b21a6" class="">Whatever the team produces is the product.</p><p id="7ef21a28-4774-4843-b10e-178957c11027" class="">
+</p><p id="760e90d3-9c91-44d3-9e5d-955bf7ba8706" class="">Customers + Users’ → Pains, Goals, Opportunities</p><p id="90c52268-5f08-4419-90cf-0bff3026c8c5" class="">Development team → Features, Services, Solutions</p><p id="c7798c9a-ac1a-495b-a6c7-3747b6ba65a5" class="">
+</p><p id="9ce9af13-03cb-4f36-a433-50e522cc31ae" class=""><strong>Ex:</strong> Kitchen remodeling. We invite the contractor and write the list of stuff needed in the kitchen - backsplash, refrigerator,.... the contractor will ask for the budget + timeline.  </p><p id="3e42c93a-698f-4e30-b8de-08a6e5d82060" class="">
+</p><figure id="e1fa0ab9-9896-4194-b365-ea1aaa73a882" class="image"><a href="Session-1%209ed0b/Screen_Shot_2022-04-02_at_2.51.46_PM.png"><img style="width:336px" src="Session-1%209ed0b/Screen_Shot_2022-04-02_at_2.51.46_PM.png"/></a></figure><p id="316053b9-6763-4fb8-9b95-476b9143700a" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="03710af5-bfdc-492a-a09e-97def48cce3a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Product is what customers need + and what the development team can deliver.</div></figure><p id="81e8966b-85d6-49ce-a8df-488b4e220cb8" class="">
+</p><p id="590fcd41-eb90-4b04-8cdd-633831644616" class="">POs need to establish the vision- what are we solving? what are we addressing? whose needs do we care about? </p><p id="b03016e7-edb1-4ce5-8093-aaf0a47943cd" class="">
+</p><p id="ce469259-5f3f-4b8c-a773-71026a8bbe43" class="">Portfolio Managers and higher-level people define the impact</p><ul id="6a689f9a-d22e-4083-934c-5f2c3252fc72" class="bulleted-list"><li style="list-style-type:disc">Ex: We want to allow mobile access for our customers. </li></ul><p id="6d2b024a-bb9d-4e2f-85b2-87add3dd8009" class="">POs need to define the outcomes, ex</p><ul id="07925917-313d-44ba-aef2-23277cecec45" class="bulleted-list"><li style="list-style-type:disc">Secure Access</li></ul><ul id="c6807281-9239-463f-983a-dec239037816" class="bulleted-list"><li style="list-style-type:disc">Accurate Information</li></ul><ul id="9d2f6ff1-081f-4760-91f0-6ae2d5b4b512" class="bulleted-list"><li style="list-style-type:disc">Pay someone</li></ul><ul id="b01366b0-e942-444c-8607-a86c56b8ee09" class="bulleted-list"><li style="list-style-type:disc">Make transactions</li></ul><p id="cee830a6-5246-4598-97a2-cf142441d126" class="">Developers produce outputs for the outcomes, ex</p><ul id="fb9d7313-4b92-4e0b-a60d-9135c78bf4a5" class="bulleted-list"><li style="list-style-type:disc">Password reset</li></ul><ul id="9f58f93f-3f07-4182-b3ce-67452dc011ff" class="bulleted-list"><li style="list-style-type:disc">Login</li></ul><ul id="1752d5e1-437a-47a7-8f69-42b3713d0804" class="bulleted-list"><li style="list-style-type:disc">Encryption</li></ul><p id="2a35e0ac-1092-45fa-8049-f18cb5858616" class=""><div class="indented"><figure id="cb0193e9-3498-46cd-bc02-0660ae90e649" class="image"><a href="Session-1%209ed0b/Screen_Shot_2022-04-02_at_2.59.45_PM.png"><img style="width:336px" src="Session-1%209ed0b/Screen_Shot_2022-04-02_at_2.59.45_PM.png"/></a></figure></div></p><p id="c92a66f3-aef0-4fc5-89f9-7b545008093b" class="">
+</p><p id="01905546-6c2d-4029-b62b-697ee3230096" class="">The product backlog is a prioritized list of items/outputs. The reason the items are in the Product backlog is that they make an impact. The items may not make a direct impact but sometimes enable us to make the impact. For example: In the above example, if the item is Encryption, we may research different encryption models that best suit the product. We invest in something today to do something tomorrow or later. </p><p id="79e12ecc-5344-4f45-874e-98a1a6ede4a6" class="">
+</p><figure id="c0e4d43a-9060-42bb-9c9b-f23f89581d86" class="image"><a href="Session-1%209ed0b/Screen_Shot_2022-04-02_at_2.59.33_PM.png"><img style="width:288px" src="Session-1%209ed0b/Screen_Shot_2022-04-02_at_2.59.33_PM.png"/></a></figure><p id="271b9e65-f8cd-4a20-84fa-afab5517f632" class="">
+</p><h2 id="36f691c4-ccd9-4b61-a2e6-8ce3bf6a9f35" class="">Value per sprint - Maximizing the value delivery</h2><p id="4170df67-42d6-43e0-a006-8abe7f799ee8" class="">
+</p><p id="c000e4d8-e82c-43e2-9162-f639d0be1d7b" class="">Imagine a project with a fixed time and fixed scope. How would the graph look like if you are looking at Time vs Value?</p><ul id="5c5c84e6-31c1-406c-b44e-93720f9991dc" class="bulleted-list"><li style="list-style-type:disc">Assuming the product backlog is prioritized based on the value</li></ul><ul id="d7089960-8fbd-4d9b-9745-b687770bb189" class="bulleted-list"><li style="list-style-type:disc">Expert PO who prioritized the backlog well</li></ul><ul id="fb7f84e0-4e6a-4b24-bf09-06e1095149e9" class="bulleted-list"><li style="list-style-type:disc">Expert developers who finish the sprints on time</li></ul><ul id="9d7b4a76-5c23-4261-aa9c-8fbec93ec023" class="bulleted-list"><li style="list-style-type:disc">We are not talking about the incremental value, just the value of each sprint</li></ul><p id="c14b0807-13c2-4e0d-a0f8-4834aeed2325" class="">
+</p><p id="f129696e-14f8-4b5e-a7bc-3f939981d1d6" class="">So by definition, the initial sprint will deliver the highest value, and the last sprint will deliver the least value. However as the team is consistent, the cost will be consistent. So over time, in the end, there might be items that might not be worth the investment. So the final x’s below the cost line, might not be worth investing.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0f4b6100-c2b7-43d1-b3ae-ba3073c790f5"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Lesson 1 - not every idea is a high-value idea. Not every idea is worth implementing. Not every feedback, ticket, commitment, and yelling is worth implementing. Some are and some aren’t.</div></figure><p id="accc32fd-df05-446c-8257-c0af7a367f1b" class="">
+</p><figure id="9dec8445-03ca-476d-8d04-77dde21d6c01" class="image"><a href="Session-1%209ed0b/Screen_Shot_2022-04-02_at_4.29.08_PM.png"><img style="width:336px" src="Session-1%209ed0b/Screen_Shot_2022-04-02_at_4.29.08_PM.png"/></a></figure><p id="e6a8a667-2c5d-4188-9cad-e3ed2254639a" class="">
+</p><p id="4c6b9c9e-ab51-434c-b5aa-f5913b20c369" class="">But because of this, the team is destined to deliver lesser value for each sprint as the value is going down. This might be depressing for the team. In order to keep the motivation up and to have the delivering better value, have to come up with new ideas. </p><p id="50eb6a23-bf32-4fac-9caf-7d8345cf497e" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1632f554-4483-4ead-ad77-57792acaa144"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Lesson 2 - Without being open to new ideas, you cannot discover new high-value ideas.</div></figure><p id="2264e552-78ab-4cd6-a52c-8f72e0b3ef3b" class="">
+</p><p id="19b83bdf-2651-45e3-b26c-7e0165e6f074" class="">New ideas are good and the sources are vast - colleagues, government, customers, partners, vendors,... </p><p id="dca07e91-60de-4e44-be55-619b66407e9d" class="">
+</p><figure id="d5ace0a4-874a-4fe1-be0c-f435425ab101" class="image"><a href="Session-1%209ed0b/Screen_Shot_2022-04-02_at_4.46.08_PM.png"><img style="width:336px" src="Session-1%209ed0b/Screen_Shot_2022-04-02_at_4.46.08_PM.png"/></a></figure><p id="d9f318ef-1a23-4b66-a998-9bd8f90c1527" class="">
+</p><p id="a725128b-7ffe-4e38-a9da-3e1343242eb8" class="">What if we are going with the traditional waterfall model, and during the project, there are some new ideas, can we not swap the new high-value ideas for the old low-value ideas to still deliver within the same time and budget?<div class="indented"><p id="f98440da-a1f9-4038-b809-8312abf4d166" class="">It was not possible in the traditional waterfall model, it’s a big batch process where we start investing in the entire project and start working as a whole. Scrum, is a small batch model so while the team is working on high-value items if someone comes up with new high-value items, it&#x27;s easy to switch the old low-value items with the new high-value items.</p></div></p><p id="35d4b2e9-aac9-4796-9dc0-f8e8a8e94d45" class="">
+</p><figure id="8d5f80c8-0cf0-4fe4-bcc5-9bbc2ea0121f" class="image"><a href="Session-1%209ed0b/Screen_Shot_2022-04-02_at_5.05.19_PM.png"><img style="width:288px" src="Session-1%209ed0b/Screen_Shot_2022-04-02_at_5.05.19_PM.png"/></a></figure><p id="4d03b49c-42b2-4130-831b-7519229e083a" class="">
+</p><p id="91f56722-3009-4bfd-8f56-980aa5c05cf2" class="">
+</p><blockquote id="2d5dfc82-8fe8-440a-abee-591f1df2ceb3" class=""><em>Question - Where does the scope creep happen in Scrum?</em> that is when the new scope is added after sprint planning is done, however, it needs to happen with the confirmation of the entire team.</blockquote><h2 id="bf54cf2f-df42-42c2-894a-541c530c9906" class="">Complexity - Understanding Complexity</h2><p id="f4b4ddd5-a163-40bd-bd06-f6071c5d8852" class="">
+</p><p id="fcecd54e-04d9-4647-8dab-636e5419be82" class="">
+</p><figure id="69551c54-8984-4ce6-b5dd-75c91178c9d0" class="image"><a href="Session-1%209ed0b/Screen_Shot_2022-04-02_at_5.50.23_PM.png"><img style="width:336px" src="Session-1%209ed0b/Screen_Shot_2022-04-02_at_5.50.23_PM.png"/></a></figure><p id="af89ab6d-e9b2-4319-845a-2ad0d343b59b" class="">
+</p><p id="542d4440-4cdc-4283-8ba5-1975f2591220" class="">From a process standpoint,</p><ul id="e5e6d708-f3b0-4c47-a17c-65fb03dda5d6" class="bulleted-list"><li style="list-style-type:disc">Simple - We know what to do and how (ex: data migration - it&#x27;s not easy or cheap, however, we know that the data needs to be migrated from A to B). The best way to tackle them is to categorize them.</li></ul><ul id="834a7002-b914-41c2-8001-2ed55258627f" class="bulleted-list"><li style="list-style-type:disc">Complicated - You want to build a house, however, you don’t know how it looks like or if you know the solution, however, not sure how to apply the solution. </li></ul><ul id="c4d8d361-c645-4c46-a838-de2e95de4b0a" class="bulleted-list"><li style="list-style-type:disc">Chaotic - No idea what to solve nor how to. Research, experimentation,... required to figure out and implement.</li></ul><ul id="3e9ac313-a1a8-477b-9950-44a420765656" class="bulleted-list"><li style="list-style-type:disc">Complex - There might be problems that you can analyze indefinitely or where from your analysis to design and implementation, the requirements changed (analysis paralysis). They are difficult to predict because of a high degree of unknown.</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="54b7f663-0bed-4824-8a1f-e2aa782e9c46"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Solution → Iteration. Building something, getting feedback, making changes.</div></figure><p id="09df0cc1-c937-47c3-932c-778619295db5" class="">
+</p><p id="2cf33e9f-32d1-41b0-9dcd-86bedb044edd" class=""><strong>Example:</strong> Amazon gets a % from your shopping cart items purchased. That is what at the checkout, in the end, they will show you 3 items that you are most probably will add-on to your cart. Maybe if someone is buying an iPhone, recommending a case or checking their previous history and recommending new items or refills (toilet papers,...) or recommending based on seasonality or recommending based on age. Also, have to value the add-on, if purchasing 40$, making an 80$ add-on would not make sense. All these factors come into play. Even then it&#x27;s not 100% accurate.</p><p id="7dfa569a-54c9-4153-a957-32bf6083eb5c" class="">
+</p><ul id="ad06f565-68af-4763-8bcc-f423ed3b427e" class="bulleted-list"><li style="list-style-type:disc">Recommending case as soon as they add a phone - analyze the data</li></ul><ul id="d07d16f8-6975-4856-b5b5-e6b738d7f89d" class="bulleted-list"><li style="list-style-type:disc">Recommend a case after a month from purchase - analyze the data</li></ul><h2 id="6d49274a-f648-45d5-abe5-430c2068564e" class="">Iterative Development - Iterative vs Incremental</h2><figure id="5077285f-f97e-444c-a2d8-bacd7ae4ec7d" class="image"><a href="Session-1%209ed0b/Screen_Shot_2022-04-02_at_5.51.30_PM.png"><img style="width:368px" src="Session-1%209ed0b/Screen_Shot_2022-04-02_at_5.51.30_PM.png"/></a></figure><p id="68447e16-cb1b-4020-a029-e5c51b2d0344" class="">Incremental - Building something in pieces. Need to be really sure what it&#x27;s going to look like. Need to make sure you have the time and funding to reach the goal because if the funding ends, you have nothing of value. </p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2cd56860-fd2d-45c3-b51e-8c347c23e514"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">With incremental, if funding stops, you do not have anything of value</div></figure><p id="362d27ff-e2bb-4d2d-ad7a-9666fb0b6045" class="">Iterative - Iterative means versions.</p><ul id="45d16a15-0558-44c2-a69f-a849f3a7cba0" class="bulleted-list"><li style="list-style-type:disc">V1 = Skateboard - better than walking. However, accidents mess up the shoes and are not stable.</li></ul><ul id="d712b85f-c6bd-4868-9edf-f548c58d009e" class="bulleted-list"><li style="list-style-type:disc">V2 = Scooter - not fast, need to carry.</li></ul><ul id="0041d96c-806b-4432-8ad5-2e156768f1ab" class="bulleted-list"><li style="list-style-type:disc">V3 = Bicycle - has a handle, stable, however difficult uphill and issues during rain.</li></ul><ul id="64a86d6f-8f3e-4880-996b-d045753cd87f" class="bulleted-list"><li style="list-style-type:disc">V4 = Bike - issues during rain</li></ul><ul id="2fb8e725-0f2d-4563-ad99-22df04535297" class="bulleted-list"><li style="list-style-type:disc">V5 = Car - all issues resolved.</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8e9cc53a-c2b2-406b-aa1e-9ea6484fdbd0"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">With iterative, if funding stops, you have some product of value.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="c9b19ff9-fb38-4abb-bc29-37684fe7d1ad"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Stopping at a car makes sense as it resolves all the issues and not building a rocket as it&#x27;s not necessary, and requires more money and time.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="bc91c53a-cff7-4248-9a9e-b57914aa7b77"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Sprint increment - each incremental or iterative development will end with a sprint increment.</div></figure><p id="bb3ea5ac-263e-4998-88ed-f388c7919969" class="">
+</p><p id="089e9a1f-3f48-497f-a3e9-9e5ee7b06c6a" class=""><strong>Exercise</strong> - Current global pandemic - we are still not sure when it ends, real estate - what it will happen, supply chain - when it will settle down. Examples of companies that adapted to an iterative approach. </p><p id="e6466fe2-b0ea-44d4-91d9-e39b6926552a" class="">
+</p><ul id="ca9cb603-979a-4cad-ad65-b37f7f2d3609" class="bulleted-list"><li style="list-style-type:disc">Zoom - gave out the licenses to all the schools in the country. Imagine the confidence they have in their platform to give it out.</li></ul><ul id="a29d878a-7478-463a-a9c1-1dc39258a321" class="bulleted-list"><li style="list-style-type:disc">Telemedicine</li></ul><ul id="28899bd1-5df0-499d-963a-204e44012958" class="bulleted-list"><li style="list-style-type:disc">Education</li></ul><ul id="f8f967af-8081-41f3-b54a-c4a9b5093e0c" class="bulleted-list"><li style="list-style-type:disc">Entertainment Movie streaming - introducing premium for an existing subscription</li></ul><p id="b60a1d45-5634-44c8-bcaf-977345609e9c" class="">
+</p><p id="18a52a60-aa56-470f-aac5-024db3ea576f" class=""><strong>Iterative process</strong> - gives the tools to figure it out. One of the best examples is Tesla. You do not have a 2022 car or 2021 car, you just get Model S however based on the year you buy you get different versions of brakes or HVAC system or battery or more. </p><p id="18d730db-0c60-4628-a8ed-880662427110" class="">
+</p><h2 id="13fb0c00-ff23-4768-86ce-9f46e9611e2b" class="">Sprint Planning</h2><p id="a43636ee-1917-4a32-bb77-0ea350af5e4e" class="">It&#x27;s an opportThere are a lot of ways to draw the Sprint. </p><figure id="e32b66f8-3aab-4013-b492-a95e4044c2ec" class="image"><a href="Session-1%209ed0b/Screen_Shot_2022-04-02_at_7.10.35_PM.png"><img style="width:528px" src="Session-1%209ed0b/Screen_Shot_2022-04-02_at_7.10.35_PM.png"/></a></figure><p id="fe920fba-c783-4e7e-8224-b2a3e8b56269" class="">
+</p><ul id="3e1bb031-e706-4dd3-a53d-6076d0e38ec4" class="bulleted-list"><li style="list-style-type:disc">Vision - Why are we here? What are the problems we are addressing?</li></ul><ul id="dce6f26b-660b-4622-aca1-daa6e9722b7a" class="bulleted-list"><li style="list-style-type:disc">Product Backlog - List of outputs from Vision that are prioritized. PO is responsible to define and manage the product backlog.</li></ul><ul id="4ed3a7ba-d5bf-4276-b61b-075ad5cef62e" class="bulleted-list"><li style="list-style-type:disc">Sprint planning - The team establishes the Sprint goal and lists out the Sprint backlog.<ul id="bd5dd706-8e89-42e0-8b97-4b02e8881ff4" class="bulleted-list"><li style="list-style-type:circle">Sprint goal - what are we trying to achieve</li></ul><ul id="fe55f7bf-d88a-4cf0-b67c-08ddf77068cc" class="bulleted-list"><li style="list-style-type:circle">Sprint backlog - Subset of product backlog<ul id="3a12da8c-ef52-4e48-a0b9-e1acd9bd55d9" class="bulleted-list"><li style="list-style-type:square">what are we going to work on</li></ul><ul id="941d3a77-160b-4ba9-8255-3e408ed6043b" class="bulleted-list"><li style="list-style-type:square">How are we going to work on </li></ul></li></ul></li></ul><ul id="833e120c-4ef9-4edc-8897-ce02f551e703" class="bulleted-list"><li style="list-style-type:disc">Developers - Responsible for managing the Sprint backlog (maintaining and updating it). The product owner comes up with the problems that need to be addressed, while the developers determine how to tackle the problem which begins in the sprint planning.</li></ul><p id="d231e77a-9fbe-4e3f-8d22-fc79d419d85d" class="">
+</p><figure id="8b87059e-c8da-48b4-b463-23f4e978a58c" class="image"><a href="Session-1%209ed0b/Screen_Shot_2022-04-02_at_7.24.54_PM.png"><img style="width:708px" src="Session-1%209ed0b/Screen_Shot_2022-04-02_at_7.24.54_PM.png"/></a></figure><p id="32a4475d-9459-4fb4-b2e8-db4db84da946" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="caf4eab0-cbd1-4317-a8f4-49a2dc80f3bd"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">The items in the backlog are granular which can be done in a matter of hours.</div></figure><p id="1cc6bd93-d6c5-40c2-bb45-dcbc64e9ebd2" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="e181a2ba-08d7-4aa0-90de-00f2fdec12a0"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Developers can’t unilaterally decide that they don’t want to work on it, POs can’t unilaterally decide what more backlog items the developers can work on if they have some free time in the sprint - needs to be decided as a team. (except the how - which is defined by the teams internally). </div></figure><p id="5c7b5cc9-88a3-4b5c-a73f-b0278d04e004" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="585a8556-2777-46b0-9955-0a81fa6db36f"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">POs can decide to cancel the sprint unilaterally. The reason to do that is if they cannot agree with the team.</div></figure><p id="5206ba73-7ec4-4532-9e8a-ccc4d9bf4e4c" class="">
+</p><p id="fe3f35ca-0d27-4c54-92e6-80d5642d0b2f" class="">JIRA, DevOps, ServiceNow - Not Facilitation Tools (they can house the plan but cannot facilitate it)</p><p id="ac824292-fa04-4430-b129-093aab1189ae" class="">Whiteboard, PostIts, Markers, Miro - Facilitation Tools.</p><p id="e4ab00dd-1bed-4fbf-90f4-0168138619c5" class="">
+</p><h3 id="df113620-be5a-4a37-8dc8-6ff38440630c" class="">Example: These are the steps GMo uses,</h3><ol type="1" id="8aefdc3e-286b-4857-a832-301778b9a0d9" class="numbered-list" start="1"><li>Draw a grid of who is available when</li></ol><ol type="1" id="847389af-265e-473f-b351-0302bdb89152" class="numbered-list" start="2"><li>Requesting PO to Communicate or provide their idea of the sprint goal</li></ol><ol type="1" id="812f02c5-2d4e-48d9-ae74-fc39f933291e" class="numbered-list" start="3"><li>Request PO to identify 2-3 items for starters and get into the details of each of the item<ol type="a" id="f3c8944a-83dd-4fb7-adf6-d3256ee123cf" class="numbered-list" start="1"><li>During the discussion, involve the developers detail down the How</li></ol></li></ol><ol type="1" id="441e8b91-c7b8-4623-9a45-a709eca3096a" class="numbered-list" start="4"><li>Request developers to brainstorm all the tasks for all the backlog items<ol type="a" id="45931ce7-be4b-495a-acca-74f88f557cd0" class="numbered-list" start="1"><li>Once I have it, collect those and show them parallelly (horizontally)</li></ol><ol type="a" id="3afa9dcd-b3d1-457d-a43e-2ac2a86593cd" class="numbered-list" start="2"><li>Vertically, list out the tasks that are common across</li></ol></li></ol><ol type="1" id="e9bde88c-f5d8-49e7-944b-780ad8569024" class="numbered-list" start="5"><li>Estimate - 3 options. Less debate.<ol type="a" id="146bfe45-b2e9-42bf-959d-d11afb76464e" class="numbered-list" start="1"><li>Less than 8 hours</li></ol><ol type="a" id="011a146a-7e14-41fb-a3b7-28a4cd4aad70" class="numbered-list" start="2"><li>Less than 4 hours</li></ol><ol type="a" id="f0202cf5-f968-4038-b434-d18c38d84023" class="numbered-list" start="3"><li>Less than 2 hours</li></ol><ol type="a" id="f2168d6c-d606-4416-bd93-6f3d581f0f7a" class="numbered-list" start="4"><li>If someone says its way more than 8, it&#x27;s way too big</li></ol></li></ol><ol type="1" id="d5f4790e-2b3c-4b0c-af96-4ca91cce715d" class="numbered-list" start="6"><li>I will ask the team if they have a learning goal</li></ol><p id="ed5f8269-435c-423a-b3bf-b649b299e4fc" class="">
+</p><p id="8a71d345-0c9d-49c7-aebf-1011cb883d18" class=""><strong>Things to do to improve</strong></p><ol type="1" id="e713475f-e066-4d9c-890e-ec98d5536786" class="numbered-list" start="1"><li>Introduce Parking lot - Anyone can add a topic that is not part of the agenda which can be brought up for discussion at the end. Needs to be accessible for everyone so they don’t interrupt.</li></ol><ol type="1" id="6d1de97e-84a3-4eef-ab33-c431bc80e886" class="numbered-list" start="2"><li>Emphasize the Sprint Goal and what are the things we need to do to pursue the goal</li></ol><ol type="1" id="bfe54369-01cc-4d77-8f72-f7b191cfec48" class="numbered-list" start="3"><li>Present developers with problems instead of solutions so that the discussion is more interactive/engaged. </li></ol><ol type="1" id="d9c4bb92-a35e-4f3f-b8bb-3e6db0946952" class="numbered-list" start="4"><li>Getting food delivered or introducing food (surprise them)</li></ol><ol type="1" id="722c68b6-e615-4dd5-9605-86a6f50f4c78" class="numbered-list" start="5"><li>The scrum team should be 10 people or less (according to the scrum guide).</li></ol><ol type="1" id="5a5e2adf-a844-47a1-adb0-1e0c69d71231" class="numbered-list" start="6"><li>Need to value collaboration</li></ol><p id="2679fd0c-80c7-461b-9f8b-fcba3075f12d" class="">
+</p></div></article></body></html>

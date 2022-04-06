@@ -1,0 +1,709 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Session 2</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="d7ea2245-ec72-4360-a7a7-873d425c5dd4" class="page serif"><header><h1 class="page-title">Session 2</h1></header><div class="page-body"><nav id="af62614c-9965-4ae3-8e73-1bf38ca8fc19" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5a829e61-9ce3-4768-8f01-170e8f526864">Day 2 Intro</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#27287032-7b57-4a9d-b3f0-4e834849c1d7">How to stay connected with the team</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#bbc0cb79-ccfd-4f16-9526-3321d3688f7b">Exam</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d5b8073f-eb08-4725-b3a5-1abcd3c95535">Sprint Planning</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6febac8d-f251-4782-bef6-8af1e4098df4">Daily Scrum</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#356f5d9e-786e-4c42-8eee-ab7bf9be7a8b">Scenarios</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c7ccc1bf-ec7c-4e52-9330-87818702f933">Sprint Burndown</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#cd5f73e7-9bfd-4628-8880-d79314f0f532">End of Sprint Review</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#fae26dec-a3d3-4f33-b188-041be8a1049a">End of Sprint Retrospective</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a4bdc8a6-e27d-4819-8bc4-b5bcfb924180">Agile Retrospectives Overview</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7b407eaa-b634-4b12-a1bb-77c4b78b1b83">Backlog Refinement</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9306b1da-bdf2-4ebf-bbbf-f3d52ed47ed1">Estimation</a></div></nav><p id="0c5da295-4904-4b9c-abbe-95a10fdaba92" class="">
+</p><p id="d5855130-e0ba-429c-8e6d-7e32e8115a92" class="">Facilitation tools - Miro, Mural, Jamboard, Liquid or Lucid chart</p><h2 id="5a829e61-9ce3-4768-8f01-170e8f526864" class="">Day 2 Intro</h2><ul id="96755169-1cc4-4f62-8a45-00917acb9bdb" class="bulleted-list"><li style="list-style-type:disc">Highly recommended to take the exam at the end of the day (60 minutes)<ul id="bf4f318e-a3bf-466c-8166-5919ec55eadc" class="bulleted-list"><li style="list-style-type:circle">If taken within the 3 days and fail, will provide a 1-1 tutoring</li></ul><ul id="6e3ef78a-8a70-4a3d-bee9-b1d8e0bbb5f5" class="bulleted-list"><li style="list-style-type:circle">2 attempts total</li></ul></li></ul><p id="07d7d512-decd-4ef1-a25b-b9577efc08fb" class="">
+</p><h2 id="27287032-7b57-4a9d-b3f0-4e834849c1d7" class="">How to stay connected with the team</h2><ul id="4de12a7e-6d5d-486e-b6d3-7b320c4f919a" class="bulleted-list"><li style="list-style-type:disc">Setting up a podcast</li></ul><ul id="fac9f8a8-6e0f-4327-a409-12dab04b2c40" class="bulleted-list"><li style="list-style-type:disc">A slack channel will be created</li></ul><ul id="3222b824-1cce-469d-a7ae-bdd3a0adb147" class="bulleted-list"><li style="list-style-type:disc">Team details - <a href="https://docs.google.com/spreadsheets/d/1ZOhtSiibrWCX4xVwu6QdDzSvwPca7-_woJlqcITCfyM/edit#gid=0">https://docs.google.com/spreadsheets/d/1ZOhtSiibrWCX4xVwu6QdDzSvwPca7-_woJlqcITCfyM/edit#gid=0</a></li></ul><h2 id="bbc0cb79-ccfd-4f16-9526-3321d3688f7b" class="">Exam</h2><ol type="1" id="31bdd9f1-fae8-4c1f-96e8-96f2d677bde7" class="numbered-list" start="1"><li>Once you get the cert, add it to LinkedIn and tag the people who you took the class with.</li></ol><ol type="1" id="dc39c318-428a-45fe-ac44-6ba4d636f54b" class="numbered-list" start="2"><li>Like/comment on others’ certification</li></ol><ol type="1" id="8020a2e9-ed14-4c09-81e4-10a33cd4ef70" class="numbered-list" start="3"><li>Tag Scrum Alliance</li></ol><ol type="1" id="837d262c-cf50-4f6a-ae12-92baff624c42" class="numbered-list" start="4"><li>Tag GMo</li></ol><p id="89caf6b0-afd6-4349-9593-11d930ad888e" class="">
+</p><h2 id="d5b8073f-eb08-4725-b3a5-1abcd3c95535" class="">Sprint Planning</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="c54f705a-df0a-4b2c-93ca-dfde5d21898e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">POs do not decide on a sprint goal, they can propose, but cannot decide. The team needs to decide together.</div></figure><p id="698d5ffe-aad0-498a-a6a5-39cd8c264bf3" class="">
+</p><ul id="5d4ebb1d-2c52-460b-ab96-8252addc260d" class="bulleted-list"><li style="list-style-type:disc">Sprint planning and capacity is not a calculation, its a decision</li></ul><ul id="6984b23e-4f56-4a5c-a513-e1f822cedf14" class="bulleted-list"><li style="list-style-type:disc">Developers decide how much they can do - based on who is available for that sprint<ul id="a0b814ed-2f2c-4b12-877f-9d4cb833033b" class="bulleted-list"><li style="list-style-type:circle">If taken too much or too less, it can be discussed during the retrospect</li></ul></li></ul><h2 id="6febac8d-f251-4782-bef6-8af1e4098df4" class="">Daily Scrum</h2><p id="00c776a9-7741-44fc-a7c4-c9e99500cebb" class="">Day 1 - we plan the sprint, what about the other days? How do we track the progress? How do we know the roadblocks? That is when Daily Scrum comes into play. What do we do during that meeting?</p><ul id="7acdc04a-5f7a-4814-9ed3-a0cee2bff998" class="bulleted-list"><li style="list-style-type:disc">No more than 15 minutes</li></ul><ul id="7906992e-2159-44fe-b0aa-2783e11613b9" class="bulleted-list"><li style="list-style-type:disc">It&#x27;s a simple planning meeting for what we are going to do for the rest of the day</li></ul><ul id="f50a13c3-0a11-49a9-aa71-b898f6625559" class="bulleted-list"><li style="list-style-type:disc">Highly specialized, brief opportunity to adjust and sync with the team</li></ul><ul id="cdfc59f5-4412-462f-a548-2933d22ef6b1" class="bulleted-list"><li style="list-style-type:disc">Discuss the priorities based on the teams’ availabilities and emergencies</li></ul><ul id="3a9244d1-3859-4e1f-ba79-924d0a01819e" class="bulleted-list"><li style="list-style-type:disc">Discuss delays and adjust in real-time</li></ul><ul id="61085fe4-dbc9-4369-b19d-5ef6e5c18e8a" class="bulleted-list"><li style="list-style-type:disc">Anyone can join that meeting to get the update.</li></ul><ul id="bd536274-6feb-4b5e-9126-403d6cbe107d" class="bulleted-list"><li style="list-style-type:disc">Sprint planning is the 2-week plan. Think Daily scrum as 24-hour planning.<ul id="a8090705-1dc4-4a49-a101-b4a2d62ef192" class="bulleted-list"><li style="list-style-type:circle">To agree on what we are planning on doing that day</li></ul></li></ul><p id="a0598a6e-c2ec-49ff-aee7-f934388eb78d" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="385e2a10-7984-4c5e-b807-9e564ef883a1"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">The daily scrum is a developers’ meeting, not CSM or POs meeting.</div></figure><p id="7858c383-05cc-43bd-b4b0-1bd2453b9e76" class="">
+</p><figure id="5d1d0f7c-a2b8-465d-aed4-340c5207978d" class="image"><a href="Session%202%205d1d0/Screen_Shot_2022-04-03_at_12.19.24_PM.png"><img style="width:384px" src="Session%202%205d1d0/Screen_Shot_2022-04-03_at_12.19.24_PM.png"/></a><figcaption>Daily Scrum - 15 minute daily calls for developers to sync</figcaption></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="fc815120-1f8b-400c-90c8-eeaac9733156"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">What worked on yesterday, what are we working on today, what are the roadblocks - this is how it used to go. It does not have to be just these. it&#x27;s not prescriptive. It&#x27;s open.</div></figure><p id="4203fa19-9d16-4401-905d-c2b00901a1c2" class="">
+</p><h2 id="356f5d9e-786e-4c42-8eee-ab7bf9be7a8b" class="">Scenarios</h2><ol type="1" id="0130e235-1013-439e-9805-6aad7d6fe039" class="numbered-list" start="1"><li>Scrum is taking too long<ol type="a" id="3bfc4b82-edad-4e2e-897a-c82b3480dc7e" class="numbered-list" start="1"><li>Why<ol type="i" id="17e2eaec-a7ea-47ed-b613-185fd6bceecf" class="numbered-list" start="1"><li>Someone is taking too long</li></ol><ol type="i" id="09d64944-5736-4931-9ce8-c3ca088f6520" class="numbered-list" start="2"><li>Insufficient sprint planning</li></ol><ol type="i" id="539d3eb6-e809-4230-97c4-162ce3c8fc4b" class="numbered-list" start="3"><li>Amount of attendees</li></ol><ol type="i" id="131a3de7-7c33-41fe-9335-4a653f8966a9" class="numbered-list" start="4"><li>Off topics</li></ol><ol type="i" id="9c65c8eb-17e7-45e0-bfab-e3540ef03c56" class="numbered-list" start="5"><li>The team is too big</li></ol></li></ol><ol type="a" id="c8d8dff1-9f5d-413e-94eb-6969ab4cc300" class="numbered-list" start="2"><li>What <ol type="i" id="4eefa64a-f2bf-4748-89f1-fec076da42fb" class="numbered-list" start="1"><li>Setting up a parking lot</li></ol><ol type="i" id="0b504d64-7eba-4f71-8cbd-7ab26ac9063b" class="numbered-list" start="2"><li>Split the teams into smaller chunks</li></ol><ol type="i" id="b4237340-094c-4549-9ee1-92939a0ba2f3" class="numbered-list" start="3"><li>Time checks during the meeting</li></ol><ol type="i" id="97c79a38-3571-47df-9f91-3065a2a22bdd" class="numbered-list" start="4"><li>Keeping the team engaged and focused</li></ol></li></ol><ol type="a" id="43b973b3-5090-4602-bca2-8e2e03712951" class="numbered-list" start="3"><li>Notes: Imagine staring at someone for 9 minutes, you get distracted in 30 seconds. So to keep them focused, it needs to be precise and engaging. As CSM it&#x27;s a responsibility to increase transparency. CSM has to make sure the Daily Scrum is 15 minutes valuable.<ol type="i" id="5e0197bd-1cae-424f-a60a-ac09c9586596" class="numbered-list" start="1"><li>Having clear expectations and hardtops</li></ol><ol type="i" id="2aa5fa0d-f9f6-4735-9f48-c09f771cb2a0" class="numbered-list" start="2"><li>Parking lots</li></ol><ol type="i" id="b1fcc6bd-2f18-489a-a6d8-32e482df571f" class="numbered-list" start="3"><li>Setting up 16th minute - a follow-up meeting </li></ol><ol type="i" id="10462965-b0da-479f-8a89-1ff5a42b9ed1" class="numbered-list" start="4"><li>Show a visible countdown timer</li></ol></li></ol></li></ol><ol type="1" id="20715a15-feb5-4687-9b43-a0f9936333bc" class="numbered-list" start="2"><li>Not everyone is attending the scrum<ol type="a" id="f686560d-426b-47e9-95ab-95251d1e37d3" class="numbered-list" start="1"><li>Why<ol type="i" id="ec655198-9659-48ac-badc-f5365fa1fc62" class="numbered-list" start="1"><li>The timing might be booked by all the developers</li></ol><ol type="i" id="eb0e883c-0a61-42ec-a37a-142a711d14a9" class="numbered-list" start="2"><li>Internal tension within the developers</li></ol><ol type="i" id="524388a0-4aa0-4b91-9a1b-96955ac4c9e7" class="numbered-list" start="3"><li>Not enough value</li></ol><ol type="i" id="ddf23113-b93c-4f34-932c-b2c00b4d7ba3" class="numbered-list" start="4"><li>Too much or too little work</li></ol></li></ol><ol type="a" id="61bbfdac-26fe-4fee-a310-31078c0ab1ae" class="numbered-list" start="2"><li>What<ol type="i" id="1cd08924-be45-4310-9382-a8f9a8cb023f" class="numbered-list" start="1"><li>Gather feedback from each developer </li></ol><ol type="i" id="3d61cf83-0bbe-4cea-a700-b23eec4cd65b" class="numbered-list" start="2"><li>Motivating the team</li></ol><ol type="i" id="cc4233a0-51b6-4c34-9f7e-af79802a2f51" class="numbered-list" start="3"><li>Changing the time of the scrum</li></ol></li></ol><ol type="a" id="02d9adf0-7af0-40de-adcb-07b3121f7f67" class="numbered-list" start="3"><li>Notes: Step 1 is always the same - talk to person 1-1. The reason Daily standup is called a standup is that it&#x27;s so short that you don’t have to sit. Making standing up mandatory is to make sure it&#x27;s quick and does not get uncomfortable. The more of a ritual you make it, the more of a tradition it becomes.<ol type="i" id="93ef02bd-7b52-4a63-9baf-a111b6016153" class="numbered-list" start="1"><li>Can set up who wins the best virtual background</li></ol><ol type="i" id="1fdd8046-2ada-4553-8466-269be717ee67" class="numbered-list" start="2"><li>Can share the trivia question</li></ol><ol type="i" id="32f2ddda-a2cc-4986-a214-51416717a474" class="numbered-list" start="3"><li>Can share a one-liner</li></ol></li></ol></li></ol><h2 id="c7ccc1bf-ec7c-4e52-9330-87818702f933" class="">Sprint Burndown</h2><p id="b81d96a8-431f-4bb0-895c-cf7adff26e03" class="">The PBIs are listed for the sprint and then they are broken down into tasks. Each task will have an estimated hour to complete. A sprint burndown is a graph and projection of where we are at, how much is left, will we be able to finish the sprint goal.</p><p id="0f303a91-81f1-4452-9097-28feb26e0a47" class="">
+</p><p id="54f649a8-88f7-4beb-813b-4d8e68ddb186" class="">Y-axis - Planned work remaining</p><p id="2a910412-313a-4b82-85c6-b4011a0ee6dd" class="">X-axis - Sprint days</p><p id="e0aa7e61-9115-4e81-8f2c-7cb9c12209ab" class="">
+</p><p id="77727abe-832c-4887-96ef-0d310931e0c2" class="">Blue - we are ahead of time and might be able to finish the work early. Can risk by choosing what to focus on.</p><p id="4ab58b39-8f53-44d8-be3a-d4e10a6a1748" class="">Red - we will not be able to reach the sprint goal. Cannot risk making a mistake. have to be careful where the time is invested and focus on high-value items.</p><figure id="cadfc1d8-6057-4380-8fab-bf8d1e1ddc99" class="image"><a href="Session%202%205d1d0/Screen_Shot_2022-04-03_at_2.31.36_PM.png"><img style="width:432px" src="Session%202%205d1d0/Screen_Shot_2022-04-03_at_2.31.36_PM.png"/></a></figure><p id="8ff49a1a-ac6b-42ab-a8f2-b5f22b27a0a3" class="">
+</p><ul id="f0ec4611-0f66-432b-99ca-d98a573bbfde" class="bulleted-list"><li style="list-style-type:disc">The estimated time remaining is not the original estimate minus time spent </li></ul><ul id="dc5d8004-2e7f-4694-81d9-f8810da86f70" class="bulleted-list"><li style="list-style-type:disc">The estimated time remaining is a re-estimation of how long it would take to finish the task.</li></ul><ul id="d8996431-a03b-48d5-9eb5-aafffb12ae5f" class="bulleted-list"><li style="list-style-type:disc">Developers use this tool</li></ul><p id="97e1e59b-7366-475f-a9f1-c6379d76755f" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8b2837b6-56cf-4674-834f-3185a8bf4757"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">It&#x27;s a tool. It&#x27;s not mandatory to use it.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ad28465c-81ee-4c50-bc40-4f3ec6e0c3b2"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">GMo’s way - Preferred way of showing planned work remaining is by showing the Number of incomplete sprint tasks. Prefers exporting the data using tools and drawing his own chart using google sheets or excel.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="749f8d16-e014-44f0-a2b3-b550f40725f8"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">As CSM - have to be careful about who is using it and who has access to it. Because its not always linear and who don’t know that (managers) might panic without knowing the trend.</div></figure><p id="647081fe-2083-453b-a604-27f4bbd63440" class="">
+</p><h2 id="cd5f73e7-9bfd-4628-8880-d79314f0f532" class="">End of Sprint Review</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ae8b2a1e-afe4-4fdd-b53d-ca87a9a2e1fe"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Sprint - Act, inspect, and adapt.</div></figure><p id="ebef5871-0016-4b3c-b9c4-1d68cf87c670" class="">The review is when we present the latest increment and hear the ideas of the customers and the stakeholders. The output of the review is the change to the product backlog. If there is no change to the Product backlog, it means we have a perfect backlog (which is unlikely).</p><p id="270cb8dd-ab0c-4318-88e4-3e2f06a2062a" class="">CSM&#x27;s responsibility is to facilitate the quality of the feedback. For example, talking about this sheet as a product,</p><figure id="ff726004-c69e-404d-b40b-f81a831d94a5" class="image"><a href="Session%202%205d1d0/Screen_Shot_2022-04-03_at_2.38.49_PM.png"><img style="width:480px" src="Session%202%205d1d0/Screen_Shot_2022-04-03_at_2.38.49_PM.png"/></a></figure><p id="a9017440-aa4a-4890-af80-ab511b7bc2d9" class="">
+</p><ol type="1" id="612f5659-d991-4cf0-a0c9-74113ac3d31e" class="numbered-list" start="1"><li>the visual representation is great</li></ol><ol type="1" id="8d5fa9b8-98e2-4888-8007-43064122f29f" class="numbered-list" start="2"><li>The color-coding</li></ol><ol type="1" id="8159ba77-c0a1-44b6-8102-05d835ae9adc" class="numbered-list" start="3"><li>The process arrows</li></ol><ol type="1" id="eb4b2238-9c53-47c2-9895-549582361142" class="numbered-list" start="4"><li>Appreciates that it&#x27;s done live and precise</li></ol><ol type="1" id="da1f4e1c-9d5a-4492-98c2-f2c91cb57329" class="numbered-list" start="5"><li>It&#x27;s simple</li></ol><p id="1c6dfa10-ebb7-4202-8eb4-b83e0c68817c" class="">
+</p><p id="b9d1ce2f-4510-40ee-8bb8-ff34af796587" class="">By doing this in meeting and asking them directly, got 5-6. However, if asked the class to put it on sticky, 3 per member, there will be 90+ comments.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="9ac27ebb-331a-4c1f-820b-1b8fade82e5e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">The CSM&#x27;s responsibility is to properly facilitate the review meeting and to get quality feedback which can influence the quality generated and the product backlog.</div></figure><p id="a966c9ab-72e0-44fe-94cc-2c6eee1da058" class="">A sprint review needs to be a product-centric/user-centric/customer-centric review of the overall product but not that of the work done on just that sprint. The feedback should be focused on the overall product but not the tasks that the developers worked on in just that sprint. Remind them what users used to do before the feature was implemented, show them how easy it is now</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="a1407851-805f-4010-8f82-a02cba2f8ae7"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Review is not where PO <strong>GIVES</strong> feedback, it&#x27;s where they <strong>GET</strong> feedback. PO should provide feedback during the sprint.</div></figure><p id="a4bc91ba-c574-4d87-a017-bccd62b02357" class="">Often time GMo attended reviews/demos where each developer go through the changes they went in detail which most of the stakeholders might not understand.</p><h2 id="fae26dec-a3d3-4f33-b188-041be8a1049a" class="">End of Sprint Retrospective</h2><p id="6b39ee86-a14c-46a5-8552-6c66ec4c24a2" class="">The final thing we do in the Sprint. We will be opportunistic in finding ways to improve. If we find any which can improve our process, we implement them. <em>Facilitated techniques are like a knife, cuts well initially and dull down eventually over time.</em> </p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="6ad96766-2b75-4b68-9415-279b97632fb3"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Recommended book - <strong>Agile Retrospectives</strong> by Diana Larsen/Esther Derby</div></figure><h3 id="a4bdc8a6-e27d-4819-8bc4-b5bcfb924180" class="">Agile Retrospectives Overview</h3><p id="385ac7cc-43f5-43b3-b8c9-91934e335b7b" class="">
+</p><p id="83f8a044-717e-47cd-bcac-adb2b85589e3" class="">It&#x27;s impossible to cover all these 5 steps in 60 minutes. GMo takes 90 minutes to do it.</p><p id="d136245d-9c3a-4ee7-9a4e-460e30ec769a" class=""> </p><ol type="1" id="c9134d93-1ffa-4c57-990c-7e5a0a878b87" class="numbered-list" start="1"><li>Setup - Setting the scene. <ol type="a" id="72adfe21-ddf9-434c-86d1-b813d9d41967" class="numbered-list" start="1"><li>Need to decide who gets to participate</li></ol><ol type="a" id="ba57353f-fbf9-453f-94c8-1190910db0cc" class="numbered-list" start="2"><li>How much time do we allocate</li></ol><ol type="a" id="01c5a2a9-40bf-4628-9986-cdd705fe4b33" class="numbered-list" start="3"><li>Tools we use (Miro,..) and do they require training in these tools</li></ol><ol type="a" id="d147ae81-7f49-4286-a502-562bfc6fb9e0" class="numbered-list" start="4"><li>Decide - Generic retrospective or targeted retrospective</li></ol><ol type="a" id="9f40d15a-6745-48cf-baa7-0040d535eaa9" class="numbered-list" start="5"><li>Keeping them private<ol type="i" id="d055f3bf-730f-47e3-a2c1-a9ec72ed36b2" class="numbered-list" start="1"><li>Pros - Safety. It will not impact their careers,...</li></ol><ol type="i" id="c75dde84-3c7c-4b07-bfb8-cebdbb79ee92" class="numbered-list" start="2"><li>Cons - Other teams will not be able to learn from our experiences.</li></ol></li></ol></li></ol><ol type="1" id="0347aec0-6e08-467b-b257-e06015019a4c" class="numbered-list" start="2"><li>Data Collection (25 - 30% of the time) - Asking participants to look back and recall what happened, and what transpired. It&#x27;s brainstorming. <ol type="a" id="e4832c14-d90d-456e-8f33-41f589ee8bcc" class="numbered-list" start="1"><li>Ask the team to rate the quality (from 0-10) - capture and visualize the results<figure id="31f4b03e-5cea-4f62-b798-0f126b20d248" class="image"><a href="Session%202%205d1d0/Screen_Shot_2022-04-03_at_4.23.41_PM.png"><img style="width:150px" src="Session%202%205d1d0/Screen_Shot_2022-04-03_at_4.23.41_PM.png"/></a></figure></li></ol><ol type="a" id="683567d0-b5b0-4ec8-810c-110cfe6209d8" class="numbered-list" start="2"><li>Happiness level<ol type="i" id="f0058248-2bee-4f58-bdbc-3583c94d2ddc" class="numbered-list" start="1"><li>Better than last sprint</li></ol><ol type="i" id="82ea4a4d-0329-48ea-bab5-5a8fa3c2c96c" class="numbered-list" start="2"><li>similar to last sprint</li></ol><ol type="i" id="2d6e6edb-cfb5-4304-ba61-137c82f05ca8" class="numbered-list" start="3"><li>worse than last sprint</li></ol></li></ol><ol type="a" id="27645a8f-b3b1-4af4-98f8-bc162b264e61" class="numbered-list" start="3"><li>Experience - Xaxis being sprint days, Yaxis being goods and bads. Map every memebr’s comments and draw how it formed<ol type="i" id="14bbc08f-daf8-420d-b95f-067b57849288" class="numbered-list" start="1"><li>what were the good experiences </li></ol><ol type="i" id="774a87e1-d34a-4710-a675-8ab846f0757f" class="numbered-list" start="2"><li>what were the bad experiences (server went down,...)<figure id="3a624555-bb0c-4577-9b6c-c2c1723680bf" class="image"><a href="Session%202%205d1d0/Screen_Shot_2022-04-03_at_4.24.00_PM.png"><img style="width:331px" src="Session%202%205d1d0/Screen_Shot_2022-04-03_at_4.24.00_PM.png"/></a></figure></li></ol></li></ol><ol type="a" id="67d8fc35-04cc-4eda-8c0f-4b60f80323f6" class="numbered-list" start="4"><li>Sailboat drawing<ol type="a" id="11080fb9-c2b5-413d-80c6-e35bf1541e7d" class="numbered-list" start="1"><li>boat - sprint</li></ol><ol type="a" id="b1e5e32d-452f-4918-bfb6-34618f81d5c1" class="numbered-list" start="2"><li>horizon - sprint goal</li></ol><ol type="a" id="da7d56b8-1b2a-4ed1-ba9d-fedeb58331c5" class="numbered-list" start="3"><li>anchor - what brought us down</li></ol><ol type="a" id="dea2b1dc-325f-40e8-8e28-60653a581e0b" class="numbered-list" start="4"><li>motor - what helped us through</li></ol><ol type="a" id="3262b4e0-572c-4440-af4b-ad1641c94463" class="numbered-list" start="5"><li>hurdles - what all did we have to navigate around<figure id="1769075b-9006-4077-b390-0f4831b86d58" class="image"><a href="Session%202%205d1d0/Screen_Shot_2022-04-03_at_4.27.06_PM.png"><img style="width:251px" src="Session%202%205d1d0/Screen_Shot_2022-04-03_at_4.27.06_PM.png"/></a></figure></li></ol></li></ol></li></ol><ol type="1" id="03695bd3-06d0-48d2-96db-5380f88fd92c" class="numbered-list" start="3"><li>Synthesis (30 - 35% of the time) - tackling the root cause by analyzing the data acquired.<ol type="a" id="0224e241-c920-4faa-b2c1-6beb67f5f21b" class="numbered-list" start="1"><li>Recognizing anomalies vs systemic issues -things that might never happen again vs which are happening frequently during the sprints</li></ol><ol type="a" id="fc2622cc-35fd-4355-935c-336f18044c4f" class="numbered-list" start="2"><li>Recognizing impact vs control<figure id="b2bcb06e-931f-4d45-9b16-18c4b098a914" class="image"><a href="Session%202%205d1d0/Screen_Shot_2022-04-03_at_4.31.05_PM.png"><img style="width:286px" src="Session%202%205d1d0/Screen_Shot_2022-04-03_at_4.31.05_PM.png"/></a></figure></li></ol></li></ol><ol type="1" id="6edb67e0-8388-4fef-b41d-28b66f2b7c79" class="numbered-list" start="4"><li>Action items (30 - 35% of the time)<ol type="a" id="4ddeb7e4-5463-4c42-83de-087ca7e038fd" class="numbered-list" start="1"><li>identify action items that are most likely to be implemented. For example - the team found a new way to test which might help<ol type="i" id="6a4b0da6-1ed2-4951-bc34-8cf4dd91e061" class="numbered-list" start="1"><li>Cannot overhaul because the risk of failure is high</li></ol><ol type="i" id="b00ab0c0-5c98-4b84-9b0e-7ce4bb83a2b1" class="numbered-list" start="2"><li>However, an iterative approach might be better to address and also safe</li></ol></li></ol></li></ol><ol type="1" id="b5d6dde2-07f6-4c05-8aa2-1ee3cde97810" class="numbered-list" start="5"><li>Closeout (5-10% of the time) - Mini retro of the retro. CSM getting feedback<ol type="a" id="01d57093-d8b0-46aa-bbe2-d03ccb7e8939" class="numbered-list" start="1"><li>Feedback<ol type="i" id="161305c4-cc8f-4e6c-bd23-a07b23059e95" class="numbered-list" start="1"><li>did we like the tools we used</li></ol><ol type="i" id="ae0c7cf4-5cf4-4b9d-951c-c7e370fb386a" class="numbered-list" start="2"><li>should we invite someone else for our </li></ol><ol type="i" id="26f8c3be-a2f4-4dc9-bb5e-081e51807d70" class="numbered-list" start="3"><li>what in this retrospect do you like vs dislike</li></ol></li></ol><ol type="a" id="ae2cb23b-adf5-4c30-86e8-b9f41bc000c6" class="numbered-list" start="2"><li>High Note Celebration<ol type="i" id="b160cc1d-48d0-47cd-a09b-4d7820286f35" class="numbered-list" start="1"><li>Sharing of mutual appreciations </li></ol></li></ol></li></ol><p id="13d92540-6f6f-4515-876a-e3842fdb0f5c" class="">
+</p><p id="3decff17-146a-4477-84f2-7d4a8b84b404" class="">There might be a plateau in improvement. Because</p><p id="83d06ff2-4368-417a-aaa6-b970efe0b4b6" class="">→ Getting from Worse to Bad is super easy</p><p id="b90bc063-4c2d-4aec-818e-9e8fca6515d6" class="">→ Getting from Bad to Average is easy</p><p id="315f16c7-c682-407f-942b-00cae5bff3f0" class="">→ Getting from Average to Good is tough</p><p id="b005a904-e5c0-4b34-b404-63433bb83f25" class="">→ Getting from Good to Great is very difficult</p><p id="1ff98e6a-332b-4bd6-9c89-36dc9003fbd7" class="">
+</p><p id="4467d155-30cc-4c77-aab5-a61eda374bfc" class="">Your team might have peaked efficiency and increasing the efficiency even by 1% might take a while. Updating the retrospective approach might help achieve this (but it will still take time).</p><h2 id="7b407eaa-b634-4b12-a1bb-77c4b78b1b83" class="">Backlog Refinement</h2><p id="b5672050-198a-4603-a6d6-98dd77774cfb" class="">Product backlog items. They are broken down enough so that they can fit into 2-week sprints. And, you don’t break down all the items, we break down the items that are on the top of the list.</p><p id="d504e27b-db83-4aa8-8afd-900bbd9c8790" class="">
+</p><p id="5111d5f9-d28f-4d1c-a1f9-51fe8086f659" class="">Backlog refinement - need to happen on a continuous basis. Can be - weekly, monthly. Developers spend 10% of their time in backlog refinement. The team should focus on the current sprint but should have a sight of where we are headed which is achieved by backlog refinement.</p><p id="a574939d-62e1-4938-b63b-4042904e782b" class="">
+</p><figure id="d421cd99-257a-4bc4-843d-7440882f04ce" class="image"><a href="Session%202%205d1d0/Screen_Shot_2022-04-03_at_4.55.42_PM.png"><img style="width:576px" src="Session%202%205d1d0/Screen_Shot_2022-04-03_at_4.55.42_PM.png"/></a><figcaption>Backlog refinement - priority and order</figcaption></figure><p id="2ea0d6db-6e46-4a7a-bcc6-3a509f833a6d" class="">
+</p><h3 id="9306b1da-bdf2-4ebf-bbbf-f3d52ed47ed1" class="">Estimation</h3><p id="be818fab-e058-4e34-8571-2da388ab2449" class="">As part of Backlog refinement, estimations happen. Scrum guide does not have an opinion on how to do it. There is no prescription. There are different ways to do it. Estimates are really important in any organization, very few are good at it. Estimation is not just coming up with a number, it&#x27;s more of a facilitation for the entire team to come to something that everyone agrees on.</p><p id="4cf86b39-6cba-4a9a-8504-ca877b4388c3" class="">
+</p><ol type="1" id="2a85e407-68bc-49df-86e6-d49cbe39bbaa" class="numbered-list" start="1"><li>Tshirt estimates - XS, S, M, L, XL (ex: as long as we agree M is bigger than S and smaller than L. Ms can be different sizes)<ol type="a" id="0419ac94-eb3d-46d4-b4d4-0290ec6b1607" class="numbered-list" start="1"><li>Downsides<ol type="i" id="fc669073-7082-4c00-94a3-58f4e22f545c" class="numbered-list" start="1"><li>does not give the granularity</li></ol></li></ol></li></ol><ol type="1" id="d9124c79-6879-430d-9543-87465ec5e224" class="numbered-list" start="2"><li>Time-based estimates<ol type="a" id="2cd9abac-bee2-4ca5-85cf-d1caf7e51f97" class="numbered-list" start="1"><li>Ideal time (effort) - how long will something take you to work on if you have everything you need and you have nothing else to work on other than this (without interruption) (ex: NFL is 60 minutes - 4 15-minute quarters)</li></ol><ol type="a" id="500872e7-6556-4dc5-98c4-d26e6a9c2c1f" class="numbered-list" start="2"><li>Elapsed time (duration) - from the time you start to end, how long did it take. (ex: NFL takes up to 3 hours - including halftime, stoppages, commercials,...)</li></ol></li></ol><ol type="1" id="532ed90d-6c9f-46d2-9eb4-1e68f1dbbcc1" class="numbered-list" start="3"><li>Story point - A relative and arbitrary unit of size. A unit is a meaningless entity. It&#x27;s purposely meaningless. The number of units however represents the size of the work. Point estimates are low accuracy estimate and are not high accuracy estimates. Factors that determine the size are<ol type="a" id="836f9c00-4337-45ec-9de4-b52abaa3b8d5" class="numbered-list" start="1"><li>Complexity</li></ol><ol type="a" id="3175d9ac-d176-407d-91e4-63b2d2e85996" class="numbered-list" start="2"><li>Volume<figure id="b5b45dac-e985-44ed-ada0-7182553ba5e3" class="image"><a href="Session%202%205d1d0/Screen_Shot_2022-04-03_at_5.34.37_PM.png"><img style="width:480px" src="Session%202%205d1d0/Screen_Shot_2022-04-03_at_5.34.37_PM.png"/></a></figure><p id="c4769855-e7c7-480e-b37f-6da3814fcc70" class="">
+</p><p id="dfff93f0-d143-4f97-a9cf-7e729d0a985a" class="">Running half a mile on gravel, while it&#x27;s raining, uphill is more difficult than running a full marathon on a paved path in perfect weather downhill.</p><p id="fee2f48e-522d-4f66-9166-bee4b2f950d2" class="">
+</p><p id="5a907c54-b4c2-447d-8511-27d38683bf8c" class="">When comparing the work, need to compare the volume and complexity.</p><p id="1e047a93-4e83-499d-af66-4f7d2024d086" class="">
+</p><p id="0f47cd20-6b37-4655-808e-66e72c8c2569" class="">Next, once the volume and complexity are confirmed, person 1 can run that marathon faster than person 2. The size of the marathon is the same, however, different runners run at a different pace.</p><p id="b4f97133-28e0-4268-b9ff-9f058ed5bb82" class="">
+</p><p id="52c6a5a3-0513-470f-83da-f02e6372f5f7" class="">As the team gets more expertise, they will get faster. If they lose someone, they might get slower. If estimating based on time, have to go back frequently to update the estimates. No one has the patience to keep updating the product backlog.</p><p id="20fc990d-ed4d-41bb-a06b-01d1e79a27cd" class="">
+</p><p id="33404833-fbe5-4762-83f0-0d90d0955002" class="">A point estimate is relative. You estimate something based on previous items and by comparing. No story can be estimated on its own.</p><p id="2f8f2ee6-6ae2-473d-89b2-3890418c35c3" class="">
+</p><p id="2b2b24ee-8248-4fa8-a3d0-b9e41d0c1d9a" class=""><strong>Scale</strong></p><ol type="a" id="ec183e0e-4957-48b5-9587-4ae8bf3486eb" class="numbered-list" start="1"><li>Fibonacci - 1 3 5 8 13...</li></ol><ol type="a" id="8d22ef2c-0c50-4dd7-8867-ce08c8e234b3" class="numbered-list" start="2"><li>Regular - 1 2 4 8 16...</li></ol><p id="3443f4fe-4374-420e-a4ab-665b856a50c2" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="45ac9d60-6fff-4674-84fb-efaeca1439d0"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">If starting brand new and there is nothing to compare and create points. Would start with the tShirt estimate, if its medium, would sign it 5 points which will give a reference, and the rest of the points per story are assigned based on the reference.</div></figure><p id="adf163e5-2123-4d15-8ab5-bd1962b386bc" class="">
+</p><p id="8c69e60c-8f85-4479-8b7b-3b021d30e0e7" class="">Points are used for</p><ol type="1" id="3d28ee57-a657-4c21-abc2-fd58e407d687" class="numbered-list" start="1"><li>Long term forecasting</li></ol><ol type="1" id="96ba3169-ba28-447e-ae13-e05431500dff" class="numbered-list" start="2"><li>Prioritizing - if something of high point does not provide as much value, POs might push it down the product backlog.</li></ol><p id="6e200d41-5123-4313-a9ed-4cfbcb475acc" class="">
+</p><p id="469ec3f4-79b6-4fde-ba71-6f400a691e67" class=""> 😑  DO NOTS 😑</p><ol type="1" id="76f4c18a-df04-4484-adbf-4177e4138279" class="numbered-list" start="1"><li> Comparing points to time</li></ol><p id="067e03d0-b0fb-45bc-a413-6e9b41fd2e4c" class="">
+</p></li></ol><p id="95e5c192-ce45-4d0f-8db2-6dd029072246" class="">
+</p><h2 id="c41e6dd2-2072-4b04-af52-b71d2cc6f351" class="">Agile &amp; Scrum</h2><p id="511ff4af-14cf-4ded-9840-41747ce1071e" class="">
+</p><p id="e14e3d93-e0cc-4a15-8dc9-aeebbe4afbf8" class="">Agile is an umbrella of values and principles underneath which are some frameworks, such as,</p><ul id="9b422524-2def-437a-a84f-bffa7d163e31" class="bulleted-list"><li style="list-style-type:disc">Scrum</li></ul><ul id="a983fa88-cc95-4a9b-aa88-500ed7a886ae" class="bulleted-list"><li style="list-style-type:disc">Lean</li></ul><ul id="bc5cedd0-8fa4-462e-9b6f-4334fc2f8528" class="bulleted-list"><li style="list-style-type:disc">Kanban</li></ul><ul id="5b288578-fbc5-40ab-ab44-b74df27f219d" class="bulleted-list"><li style="list-style-type:disc">Extreme Programming</li></ul><ul id="9d5a26a2-d4f0-4c62-802d-4419d9c51d93" class="bulleted-list"><li style="list-style-type:disc">Crystal</li></ul><ul id="da73b542-17d8-4c3b-b011-725f36f0c305" class="bulleted-list"><li style="list-style-type:disc">Feature Driven Development (FDD)</li></ul><ul id="67602362-61a7-404e-b097-984350d7dbcb" class="bulleted-list"><li style="list-style-type:disc">DSDM</li></ul><p id="627b8b46-19bd-4417-9110-2a6a3583e3ad" class="">
+</p><h3 id="505f1cfa-351b-444b-9021-30c2ea0d6906" class="">Agile manifesto</h3><ul id="7f9708db-96cf-4a68-9ed8-fa9631efb19f" class="bulleted-list"><li style="list-style-type:disc">Individuals and interactions over process and tools</li></ul><ul id="8f1e34bf-655f-4f2a-8080-53f4b1805708" class="bulleted-list"><li style="list-style-type:disc">Working software over documentation</li></ul><ul id="9e6477a6-1bb9-4ef4-a09f-35a5ebefbb3e" class="bulleted-list"><li style="list-style-type:disc">Customer collaboration over contract negotiation</li></ul><ul id="0a621439-3104-491c-9acd-49fdadb57c0f" class="bulleted-list"><li style="list-style-type:disc">Responding to change over following a plan</li></ul><p id="e06fcdca-a84c-488b-8e63-999f3a25696c" class="">
+</p><h3 id="4d5af55b-7195-4dad-a4fc-aedc5bf65ca4" class="">12 Agile Principles - Interpretation</h3><p id="a598c5b2-60b0-4349-a561-6130189622b8" class="">
+</p><figure id="4eeb2440-004e-4764-94de-fa181e54557f" class="image"><a href="Session%202%205d1d0/Screen_Shot_2022-04-03_at_6.52.15_PM.png"><img style="width:872px" src="Session%202%205d1d0/Screen_Shot_2022-04-03_at_6.52.15_PM.png"/></a></figure><p id="d6e5c8db-8d5d-4cd1-9250-d1907d790a14" class="">
+</p><ol type="1" id="340cf254-de9b-4396-8feb-e88c0e260df9" class="numbered-list" start="1"><li>Customer satisfaction through iterative deployment</li></ol><ol type="1" id="3b8ba6f3-cd7f-43c3-aa5d-310295f3e634" class="numbered-list" start="2"><li>Embrace change to benefit the customer</li></ol><ol type="1" id="6ab6540a-0142-44a3-87ca-60a93fc705cb" class="numbered-list" start="3"><li>Working product frequently delivered</li></ol><ol type="1" id="650d4437-eb02-4390-8077-d6872b4fd867" class="numbered-list" start="4"><li>Emphasize Stakeholder and developer collaboration</li></ol><ol type="1" id="a67b0feb-8f97-4dc3-a1fe-af24dd473414" class="numbered-list" start="5"><li>Empower self-organizing teams</li></ol><ol type="1" id="3ae1c6c9-9650-486a-9f1b-622053e4c0b8" class="numbered-list" start="6"><li>Communicate face-to-face</li></ol><ol type="1" id="c2b730d9-0728-4d84-b85d-5a9cbed9dd9f" class="numbered-list" start="7"><li>Measuring progress through working product</li></ol><ol type="1" id="17f57c5c-9fa2-4d3c-a93a-d34391c06305" class="numbered-list" start="8"><li>Its a marathon, not a sprint</li></ol><ol type="1" id="62805fa6-ab3c-4002-8e81-7d475aa28c24" class="numbered-list" start="9"><li>Technical excellence + Good Design = Better Agility</li></ol><ol type="1" id="30ee94f6-b4d7-4b6f-8975-45429ac9f5a6" class="numbered-list" start="10"><li>Simplicity - prioritization and batching - making sure to work minimum by working on just necessary stuff</li></ol><ol type="1" id="05ba3d54-2f24-4c95-98ae-1625f2581a87" class="numbered-list" start="11"><li>No one is handing developers the best architecture. They are coming up on their own through iteration.</li></ol><ol type="1" id="e9c27ffc-5425-46a0-b0f0-6d930065a444" class="numbered-list" start="12"><li>Adapt, adjust and excel regularly</li></ol><h3 id="f4042623-bcf3-4e1c-a337-eac9d612324d" class="">Scrum values</h3><ol type="1" id="8e2d5a05-976f-4e7a-a62e-da65f30498b4" class="numbered-list" start="1"><li>Commitment - commitment towards achieving not finishing, commitment to helping peers,...</li></ol><ol type="1" id="edfed2be-cd07-4765-b377-d9205c9e3571" class="numbered-list" start="2"><li>Focus - by creating small batches (2-week sprints), by having an agreed sprint goal</li></ol><ol type="1" id="6d2f9b01-9a64-48e5-a08f-d89376ae9c15" class="numbered-list" start="3"><li>Openness - open kitchen concept exhibiting transparency (stakeholders or other teams can get involved)</li></ol><ol type="1" id="2d5df5a9-8e23-4b5b-b034-c1b24fd29bbf" class="numbered-list" start="4"><li>Respect - respect towards peers (talking 1-1 instead of public shaming or tattletale, respective developer decision on how much they can take on) </li></ol><ol type="1" id="f4448f7c-fdbb-42b5-b2b4-cf6fa87c7343" class="numbered-list" start="5"><li>Courage - doing the right thing, to say no to unreasonable demand, to say no to cutting corners, to say no to PO squeezing in points</li></ol><h2 id="2ec8a89a-46f1-4d8e-b4f3-2b65d5da363e" class="">Roles &amp; Responsibilities Summary</h2><h3 id="70fc72fb-f17e-4b82-8df6-cc833ee7e92e" class="">Product owner</h3><figure id="eda8d9aa-749f-43d9-add9-35036f76f29d" class="image"><a href="Session%202%205d1d0/Screen_Shot_2022-04-03_at_7.13.21_PM.png"><img style="width:933px" src="Session%202%205d1d0/Screen_Shot_2022-04-03_at_7.13.21_PM.png"/></a></figure><ol type="1" id="1ea9a79b-378c-44d7-8fc2-b7dbfd3d23ce" class="numbered-list" start="1"><li>Decides the vision, goals, backlog priority</li></ol><ol type="1" id="f661c22b-05fb-4b8b-b8f3-0495f36084dc" class="numbered-list" start="2"><li>Not waiters or drive-throughs where orders are placed and receive the changes right away</li></ol><ol type="1" id="f58793bf-fbf0-4f9e-9e5a-2ab0d296c73c" class="numbered-list" start="3"><li>Not liaison - POs decide what the product is going to be</li></ol><ol type="1" id="eede3bf3-8471-4eb6-8471-3e749e18cd73" class="numbered-list" start="4"><li>POs decide the investment - bug fixes or enhancements,...</li></ol><h3 id="18bc6c31-d770-4875-b30e-42f2325cb757" class="">Scrum Master</h3><figure id="5a33250e-6d11-4ddc-bf31-3aebd31b776b" class="image"><a href="Session%202%205d1d0/Screen_Shot_2022-04-03_at_7.21.17_PM.png"><img style="width:939px" src="Session%202%205d1d0/Screen_Shot_2022-04-03_at_7.21.17_PM.png"/></a></figure><ol type="1" id="91589e4a-d33a-400e-bf2e-f2e34f5ed5c2" class="numbered-list" start="1"><li>Service to POs, Developers, Organization<ol type="a" id="0fd7f06d-7210-4d74-9d00-57dbaa419a5b" class="numbered-list" start="1"><li>Help POs in facilitation and interaction with the teams and prioritization</li></ol><ol type="a" id="461aaf37-3f53-472a-9713-73626f82e59e" class="numbered-list" start="2"><li>Coaching and motivating scrum team</li></ol><ol type="a" id="f5326542-09f3-44f7-828d-d07c1f5a20b0" class="numbered-list" start="3"><li>Organizational change agents - collaborating with SMs of other teams and changing the org standards to alleviate the policies which will benefit all future teams forever.</li></ol><ol type="a" id="11730a43-1d60-4e61-b012-127019e82810" class="numbered-list" start="4"><li>Help resolve impediments</li></ol></li></ol><ol type="1" id="5a4eb652-be26-4644-9f82-dc58d0610d81" class="numbered-list" start="2"><li>Prioritizing the Team over PO over Organization.</li></ol><h3 id="68f47fff-e06a-4679-9d6f-38aa48189867" class="">Developers (product developers)</h3><figure id="ed23bc35-f232-48a4-8e26-cdcab7d4bffa" class="image"><a href="Session%202%205d1d0/Screen_Shot_2022-04-03_at_7.27.55_PM.png"><img style="width:923px" src="Session%202%205d1d0/Screen_Shot_2022-04-03_at_7.27.55_PM.png"/></a></figure><p id="552cb1e0-6cf5-4567-b0bf-1135ead32ce7" class="">
+</p><ol type="1" id="f38fc8df-8c42-4c9f-9967-d5292d9987aa" class="numbered-list" start="1"><li>Developers run Daily scrums</li></ol><ol type="1" id="b2fea73c-b114-4193-b59d-22491151fe53" class="numbered-list" start="2"><li>Owns the “how” decisions for the product</li></ol></li></ol><p id="1666c4a9-3ea1-48c2-a124-cf1216114ca7" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="35c1a426-648e-4729-a509-7a5d965cf049"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Only 3 Artifacts in the scrum - Product backlog, Sprint backlog &amp; The Increment</div></figure><p id="5a86804a-d946-4298-bb97-157dca9aa5b9" class="">
+</p></div></article></body></html>
